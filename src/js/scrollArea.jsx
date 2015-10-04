@@ -1,5 +1,6 @@
 import React from 'react';
 import Scrollbar from './scrollBar';
+import objectAssign from 'object-assign';
 
 class ScrollArea extends React.Component{
     constructor(props){
@@ -32,10 +33,10 @@ class ScrollArea extends React.Component{
     }
 
     render(){
-        var style = {
+        var style = objectAssign(this.props.contentStyle || {}, {
             marginTop: this.state.topPosition,
             marginLeft: this.state.leftPosition
-        };
+        });
 
         var scrollbarY = this.canScrollY()? (
             <Scrollbar
@@ -183,6 +184,7 @@ ScrollArea.propTypes = {
     className: React.PropTypes.string,
     speed: React.PropTypes.number,
     contentClassName: React.PropTypes.string,
+    contentStyle: React.PropTypes.object,
     vertical: React.PropTypes.bool,
     horizontal: React.PropTypes.bool
 };
