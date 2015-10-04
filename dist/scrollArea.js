@@ -92,7 +92,7 @@
                 var contentClasses = 'scrollarea-content ' + this.props.contentClassName;
                 return _React['default'].createElement(
                     'div',
-                    { className: classes, onWheel: this.handleWheel.bind(this) },
+                    { id: this.props.id, className: classes, onWheel: this.handleWheel.bind(this) },
                     _React['default'].createElement(
                         'div',
                         { ref: 'content', style: style, className: contentClasses },

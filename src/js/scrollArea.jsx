@@ -59,7 +59,7 @@ class ScrollArea extends React.Component{
         var classes = 'scrollarea ' + this.props.className;
         var contentClasses = 'scrollarea-content ' + this.props.contentClassName
         return (
-            <div className={classes} onWheel={this.handleWheel.bind(this)}>
+            <div id={this.props.id} className={classes} onWheel={this.handleWheel.bind(this)}>
                 <div ref="content" style={style} className={contentClasses}>
                     {this.props.children}
                 </div>
